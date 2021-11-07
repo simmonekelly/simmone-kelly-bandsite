@@ -1,0 +1,55 @@
+@use '../styles/partials/global' as *;
+@use '../styles/partials/colors-fonts' as *;
+
+/*UPDATE TO START WITH MOBILE FIRST THEN DESKTOP*/
+
+.hero {
+    background: url(../assets/Images/hero-bio.jpg) center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 25vh;
+    color: $white;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    color: $bandsite-black;
+}
+
+.section-header {
+    align-self: flex-start;
+}
+
+.about-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.about__text-left {
+    display: flex;
+    padding-bottom: 16px;
+}
+
+.about__text-right {
+    display: flex;
+    padding-bottom: 16px;
+}
+
+.photo-gallery {
+    background-color: $alabaster;
+}
+
+.photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        padding-bottom: 16px;
+    }
+}
+
