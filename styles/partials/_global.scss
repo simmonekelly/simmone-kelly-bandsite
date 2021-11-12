@@ -1,7 +1,7 @@
 @use '../partials/colors-fonts' as *;
 
 /*@mixin tablet {
-    @media (min-width: $tablet-lower-breakpoint) and (max-width: $tablet-higher-breakpoint ) {
+    @media (min-width: $tablet-breakpoint) {
         @content;
     }
 }
@@ -95,18 +95,28 @@ h3 {
 
 .primary-nav {
     display: flex;
+    width: 100%;
 
-    &__list {
+    ul {
         display: flex;
         text-decoration: none;
         list-style: none;
         margin: 0;
+        width: 100%;
         padding-inline-start: 0;
 
-        &-item{
+        li {
             display: flex;
             color: $mercury;
-            margin: 20px;
+            padding: 16px;
+            width: 50%;
+            justify-content: center;
+        }
+        li:hover {
+            color: $white;
+            border-bottom: solid $white 3px;
+            transition-property: border-bottom-color, border-bottom-width;
+            transition-duration: 1s, 1s;
         }
     }
 }
@@ -118,6 +128,9 @@ blockquote {
     margin-block-end: 0;
     margin-inline-start: 0;
     margin-inline-end: 0;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
 }
 
 .footer {
@@ -129,15 +142,27 @@ blockquote {
     &-section {
         display: flex;
         flex-direction: column;
+
+        &__header {
+            font-weight: 600;
+        }
+
+        p {
+            padding: 8px 0;
+        }
     }
 
     &-logo {
         display: flex;
     max-height: 20px;
     max-width: 120px;
+    padding: 8px 0;
     }
 }
 
-.social-container {
-    display: flex;
+.social{
+    flex-direction: row;
+    img {
+        padding-right: 16px
+    };
 }
