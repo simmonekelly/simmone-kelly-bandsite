@@ -1,11 +1,11 @@
 @use '../partials/colors-fonts' as *;
 
-/*@mixin tablet {
+@mixin tablet {
     @media (min-width: $tablet-breakpoint) {
         @content;
     }
 }
-
+/*
 @mixin desktop {
     @media (min-width: $desktop-breakpoint) {
         @content;
@@ -23,6 +23,10 @@ body {
 .site-padding {
     padding: 0 16px;
 
+    @include tablet() {
+        padding: 0 36px;  
+    }
+
    /* @include mobile() {
         padding: 0 calc(100vw - 16px);  
     }
@@ -39,11 +43,10 @@ p {
     font-weight: 400;
     margin: 0;
 
-   /* @include mobile() {
-        font-size: 13px;
-        line-height: 18px;
-        font-weight: 400;
-    }*/
+   @include tablet() {
+        font-size: 14px;
+        line-height: 22px;
+    }
     
 }
 
@@ -53,11 +56,11 @@ h1 {
     line-height: 32px;
     font-weight: 600;
 
-    /*@include mobile() {
-        font-size: 24px;
-        line-height: 32px;
+    @include tablet() {
+        font-size: 60px;
+        line-height: 68px;
         font-weight: 600;
-    }*/
+    }
 }
 
 h2 {
@@ -67,6 +70,11 @@ h2 {
     padding-top: 24px;
     padding-bottom: 16px;
     margin: 0;
+
+    @include tablet() {
+        font-size: 36px;
+        line-height: 46px;
+    }
 }
 
 h3 {
@@ -77,6 +85,11 @@ h3 {
     padding-top: 24px;
     padding-bottom: 16px;
     margin: 0;
+
+    @include tablet() {
+        font-size: 24px;
+        line-height: 32px;
+    }
 }
 
 .site-header {
@@ -84,7 +97,12 @@ h3 {
     align-items: center;
     flex-direction: column;
     background-color: $bandsite-black;
-    padding-top: 16px
+    padding-top: 16px;
+
+    @include tablet() {
+        flex-direction: row;
+        padding-left: 36px;
+    }
 }
 
 .header-logo {
@@ -96,6 +114,11 @@ h3 {
 .primary-nav {
     display: flex;
     width: 100%;
+
+    @include tablet() {
+        flex-direction: row;
+        width: inherit;
+    }
 
     ul {
         display: flex;
@@ -131,6 +154,11 @@ blockquote {
     font-weight: 500;
     font-size: 13px;
     line-height: 18px;
+
+    @include tablet() {
+        font-size: 14px;
+        line-height: 22px;
+    }
 }
 
 .footer {
@@ -138,6 +166,10 @@ blockquote {
     display: flex;
     flex-direction: column;
     color: $white;
+
+    @include tablet() {
+        flex-direction: row;
+    }
 
     &-section {
         display: flex;
