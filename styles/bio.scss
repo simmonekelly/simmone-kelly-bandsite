@@ -19,13 +19,16 @@
     background-color: $white;
     color: $bandsite-black;
 
-    img {
+    div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
         @include tablet {
-        width: 85%;
+            width: 85%;
+            }
         }
-    }
    
-
     &-description {
         display: flex;
         flex-direction: column;
@@ -33,18 +36,16 @@
         @include tablet {
             flex-direction: row;
         }
+
+        p {
+            display: flex;
+            padding-bottom: 16px; 
+        }
     }
 }
 
-.section-header {
+.section-header, h3 {
     align-self: flex-start;
-}
-
-
-
-.about__text-left, .about__text-right {
-    display: flex;
-    padding-bottom: 16px;
 }
 
 .photo-gallery {

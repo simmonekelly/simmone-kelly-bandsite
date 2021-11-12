@@ -167,34 +167,63 @@ blockquote {
     flex-direction: column;
     color: $white;
 
-    @include tablet() {
-        flex-direction: row;
-    }
+    div {
 
-    &-section {
         display: flex;
         flex-direction: column;
 
-        &__header {
-            font-weight: 600;
-        }
+        @include tablet() {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+          }
 
-        p {
+        .footer-logo {
+            max-height: 20px;
+            max-width: 120px;
             padding: 8px 0;
+            display: none;
+
+            @include tablet() {
+                display: flex;
+              }
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+
+            .footer-names {
+                font-weight: 600;
+            }
+
+            p {
+                padding: 8px 0;
+            }
+        }
+
+        .social{
+            flex-direction: row;
+        
+            img {
+                padding-right: 16px;
+            }
+        
+            @include tablet {
+                align-self: inherit;
+            }
         }
     }
 
-    &-logo {
+    &-logo__mobile {
         display: flex;
-    max-height: 20px;
-    max-width: 120px;
-    padding: 8px 0;
+        max-height: 20px;
+        max-width: 120px;
+        padding: 8px 0;
+
+        @include tablet {
+            display: none;
+        }
     }
 }
 
-.social{
-    flex-direction: row;
-    img {
-        padding-right: 16px
-    };
-}

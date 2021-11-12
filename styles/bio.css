@@ -183,33 +183,59 @@ blockquote {
   flex-direction: column;
   color: #FFFFFF;
 }
-@media (min-width: 768px) {
-  .footer {
-    flex-direction: row;
-  }
-}
-.footer-section {
+.footer div {
   display: flex;
   flex-direction: column;
 }
-.footer-section__header {
+@media (min-width: 768px) {
+  .footer div {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.footer div .footer-logo {
+  max-height: 20px;
+  max-width: 120px;
+  padding: 8px 0;
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer div .footer-logo {
+    display: flex;
+  }
+}
+.footer div article {
+  display: flex;
+  flex-direction: column;
+}
+.footer div article .footer-names {
   font-weight: 600;
 }
-.footer-section p {
+.footer div article p {
   padding: 8px 0;
 }
-.footer-logo {
+.footer div .social {
+  flex-direction: row;
+}
+.footer div .social img {
+  padding-right: 16px;
+}
+@media (min-width: 768px) {
+  .footer div .social {
+    align-self: inherit;
+  }
+}
+.footer-logo__mobile {
   display: flex;
   max-height: 20px;
   max-width: 120px;
   padding: 8px 0;
 }
-
-.social {
-  flex-direction: row;
-}
-.social img {
-  padding-right: 16px;
+@media (min-width: 768px) {
+  .footer-logo__mobile {
+    display: none;
+  }
 }
 
 /*UPDATE TO START WITH MOBILE FIRST THEN DESKTOP*/
@@ -229,8 +255,13 @@ blockquote {
   background-color: #FFFFFF;
   color: #323232;
 }
+.about div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 @media (min-width: 768px) {
-  .about img {
+  .about div {
     width: 85%;
   }
 }
@@ -243,14 +274,13 @@ blockquote {
     flex-direction: row;
   }
 }
-
-.section-header {
-  align-self: flex-start;
-}
-
-.about__text-left, .about__text-right {
+.about-description p {
   display: flex;
   padding-bottom: 16px;
+}
+
+.section-header, h3 {
+  align-self: flex-start;
 }
 
 .photo-gallery {
