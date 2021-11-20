@@ -24,50 +24,98 @@
         flex-direction: column;
         width: 100%;
         
-        @include tablet {
+        @include tablet () {
             width: 85%;
             }
-        }
-   
-    &-description {
-        display: flex;
-        flex-direction: column;
-        
-        @include tablet {
-            flex-direction: row;
-        }
 
-        p {
-            display: flex;
-            padding-bottom: 16px; 
+        //this is the same as tablet
+        @include dekstop {
+            width: 85%;
+            }
+
+        h3 {
+            @extend.section-header;
         }
+        element {
+            display: flex;
+            flex-direction: column;
+                
+            @include tablet() {
+                flex-direction: row;
+            }
+        
+            //this is the same as tablet
+                @include dekstop {
+                    flex-direction: row;
+                    }
+        
+             p {
+                display: flex;
+                padding-bottom: 16px; 
+            }
+        }
+    }  
+}
+
+.section-header {
+    align-self: flex-start;
+}
+
+blockquote {
+    display: flex;
+    padding-top: 16px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+
+    @include tablet() {
+        font-size: 24px;
+        line-height: 32px;
+        padding-top: 3rem;
+    }
+
+    @include desktop() {
+       width: 85%;
     }
 }
 
-.section-header, h3 {
-    align-self: flex-start;
+.blockquote-byline {
+
+    @include tablet() {
+        font-size: 20px;
+        line-height: 22px;
+        padding-top: 16px;
+    }
+
 }
 
 .photo-gallery {
     background-color: $alabaster;
-}
 
-.photo-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    @include tablet() {
-        justify-content: space-between;
-    }
-
-    img {
-        width: 100%;
-        padding: 8px 0;
+    div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
 
         @include tablet() {
-            width: 30%;
+            justify-content: space-between;
         }
+
+        img {
+            width: 100%;
+            padding-bottom: 16px;
+
+            @include tablet() {
+                width: 31%;
+            }
+
+            @include desktop() {
+                padding-bottom: 2rem;
+            }
+         }
     }
 }
-

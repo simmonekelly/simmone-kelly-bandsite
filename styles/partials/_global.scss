@@ -1,17 +1,5 @@
 @use '../partials/colors-fonts' as *;
 
-@mixin tablet {
-    @media (min-width: $tablet-breakpoint) {
-        @content;
-    }
-}
-/*
-@mixin desktop {
-    @media (min-width: $desktop-breakpoint) {
-        @content;
-    }
-}*/
-
 html {
     font-family: Avenir Next;
 }
@@ -27,72 +15,12 @@ body {
         padding: 0 36px;  
     }
 
-   /* @include mobile() {
-        padding: 0 calc(100vw - 16px);  
-    }
-
-    @include tablet() {
-        padding: 0 calc(100vw - 26px);  
-    } */
-}
-
-
-p {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
-    margin: 0;
-
-   @include tablet() {
-        font-size: 14px;
-        line-height: 22px;
-    }
-    
-}
-
-
-h1 {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 600;
-
-    @include tablet() {
-        font-size: 60px;
-        line-height: 68px;
-        font-weight: 600;
+   @include desktop() {
+        padding: 0 calc(100vw - (1280px - 150px));  
     }
 }
 
-h2 {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 600;
-    padding-top: 24px;
-    padding-bottom: 16px;
-    margin: 0;
-
-    @include tablet() {
-        font-size: 36px;
-        line-height: 46px;
-    }
-}
-
-h3 {
-    
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 600;
-    padding-top: 24px;
-    padding-bottom: 16px;
-    margin: 0;
-
-    @include tablet() {
-        font-size: 24px;
-        line-height: 32px;
-    }
-}
-
-.site-header {
+header {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -103,12 +31,17 @@ h3 {
         flex-direction: row;
         padding-left: 36px;
     }
+
+    @include desktop() {
+       padding: 16px calc(100vw - (1280px - 150px)) 0;
+    }
 }
 
 .header-logo {
     display: flex;
     max-height: 20px;
     max-width: 120px;
+    padding-bottom: 16px;
 }
 
 .primary-nav {
@@ -131,33 +64,29 @@ h3 {
         li {
             display: flex;
             color: $mercury;
-            padding: 16px;
+            padding: 0 16px;
             width: 50%;
             justify-content: center;
+
+            a {
+                text-decoration: none;
+                color: $mercury;
+            }
+
+            .active {
+                color: $white;
+                font-weight: bold;
+                border-bottom: solid $white 3px;
+                padding-bottom: 16px;
+            }
         }
+
         li:hover {
-            color: $white;
-            border-bottom: solid $white 3px;
+            @extend .active;
+            font-weight: normal;
             transition-property: border-bottom-color, border-bottom-width;
             transition-duration: 1s, 1s;
         }
-    }
-}
-
-blockquote {
-    display: flex;
-    padding-top: 16px;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 18px;
-
-    @include tablet() {
-        font-size: 14px;
-        line-height: 22px;
     }
 }
 
