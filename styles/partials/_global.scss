@@ -25,11 +25,10 @@ header {
     align-items: center;
     flex-direction: column;
     background-color: $bandsite-black;
-    padding-top: 16px;
 
     @include tablet() {
         flex-direction: row;
-        padding-left: 36px;
+        padding: 0 36px;
     }
 
     @include desktop() {
@@ -41,7 +40,19 @@ header {
     display: flex;
     max-height: 20px;
     max-width: 120px;
-    padding-bottom: 16px;
+    padding: 16px 0;
+
+    @include tablet() {
+        flex-direction: row;
+        padding: 36px 0;
+        padding-right: 36px;
+    }
+
+    @include desktop() {
+        flex-direction: row;
+        padding: 36px 0;
+        padding-right: 36px;
+    }
 }
 
 .primary-nav {
@@ -64,20 +75,31 @@ header {
         li {
             display: flex;
             color: $mercury;
-            padding: 0 16px;
             width: 50%;
             justify-content: center;
+
+            @include tablet() {
+                width: 100%;
+                padding: 0 16px;
+            }
 
             a {
                 text-decoration: none;
                 color: $mercury;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                padding-bottom: 16px;
+
+                @include tablet () {
+                    padding: 36px 0;
+                }
             }
 
             .active {
                 color: $white;
-                font-weight: bold;
-                border-bottom: solid $white 3px;
-                padding-bottom: 16px;
+                font-weight: 500;
+                border-bottom: solid $white 3px;               
             }
         }
 
@@ -107,6 +129,10 @@ header {
             align-items: center;
           }
 
+          h2 {
+              padding: 16px 0;
+          }
+
         .footer-logo {
             max-height: 20px;
             max-width: 120px;
@@ -121,9 +147,10 @@ header {
         article {
             display: flex;
             flex-direction: column;
+            padding: 8px 0;
 
             .footer-names {
-                font-weight: 600;
+                font-weight: 500;
             }
 
             p {
@@ -133,13 +160,19 @@ header {
 
         .social{
             flex-direction: row;
+            justify-content: space-between;
+            width: 40%;
         
             img {
                 padding-right: 16px;
             }
         
             @include tablet {
-                align-self: inherit;
+                justify-content: flex-start;
+            }
+
+            @include desktop {
+                justify-content: flex-start;
             }
         }
     }
@@ -148,7 +181,7 @@ header {
         display: flex;
         max-height: 20px;
         max-width: 120px;
-        padding: 8px 0;
+        padding: 42px 0 8px;
 
         @include tablet {
             display: none;

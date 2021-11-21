@@ -15,13 +15,13 @@ $tablet-breakpoint: 768px;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Avenir Next' ;
+    font-family: 'Avenir Next Demi' ;
     src: url(../../assets/Font/AvenirNextLTPro-Demi.otf) format("otf");
     font-weight: 600;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Avenir Next' ;
+    font-family: 'Avenir Next Bold' ;
     src: url(../../assets/Font/AvenirNextLTPro-Bold.otf) format("otf");
     font-weight: 700;
     font-style: normal;
@@ -50,12 +50,12 @@ p {
         font-size: 14px;
         line-height: 22px;
     }
-/* fonts are same as tablet
+
     @include desktop() {
         font-size: 14px;
         line-height: 22px;
 
-    } */
+    } 
     
 }
 
@@ -63,12 +63,18 @@ p {
 h1 {
     font-size: 24px;
     line-height: 32px;
-    font-weight: 600;
+    font-weight: 500;
 
     @include tablet() {
         font-size: 60px;
         line-height: 68px;
-        font-weight: 600;
+        font-weight: 500;
+    }
+
+    @include desktop() {
+        font-size: 60px;
+        line-height: 68px;
+        font-weight: 500;
     }
 }
 

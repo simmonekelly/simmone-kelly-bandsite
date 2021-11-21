@@ -5,13 +5,13 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "Avenir Next";
+  font-family: "Avenir Next Demi";
   src: url(../../assets/Font/AvenirNextLTPro-Demi.otf) format("otf");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: "Avenir Next";
+  font-family: "Avenir Next Bold";
   src: url(../../assets/Font/AvenirNextLTPro-Bold.otf) format("otf");
   font-weight: 700;
   font-style: normal;
@@ -21,14 +21,14 @@ p {
   line-height: 18px;
   font-weight: 400;
   margin: 0;
-  /* fonts are same as tablet
-      @include desktop() {
-          font-size: 14px;
-          line-height: 22px;
-
-      } */
 }
 @media (min-width: 768px) {
+  p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+@media (min-width: 1280px) {
   p {
     font-size: 14px;
     line-height: 22px;
@@ -38,13 +38,20 @@ p {
 h1 {
   font-size: 24px;
   line-height: 32px;
-  font-weight: 600;
+  font-weight: 500;
 }
 @media (min-width: 768px) {
   h1 {
     font-size: 60px;
     line-height: 68px;
-    font-weight: 600;
+    font-weight: 500;
+  }
+}
+@media (min-width: 1280px) {
+  h1 {
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 500;
   }
 }
 
@@ -117,12 +124,11 @@ header {
   align-items: center;
   flex-direction: column;
   background-color: #323232;
-  padding-top: 16px;
 }
 @media (min-width: 768px) {
   header {
     flex-direction: row;
-    padding-left: 36px;
+    padding: 0 36px;
   }
 }
 @media (min-width: 1280px) {
@@ -135,7 +141,21 @@ header {
   display: flex;
   max-height: 20px;
   max-width: 120px;
-  padding-bottom: 16px;
+  padding: 16px 0;
+}
+@media (min-width: 768px) {
+  .header-logo {
+    flex-direction: row;
+    padding: 36px 0;
+    padding-right: 36px;
+  }
+}
+@media (min-width: 1280px) {
+  .header-logo {
+    flex-direction: row;
+    padding: 36px 0;
+    padding-right: 36px;
+  }
 }
 
 .primary-nav {
@@ -160,19 +180,32 @@ header {
 .primary-nav ul li {
   display: flex;
   color: #E1E1E1;
-  padding: 0 16px;
   width: 50%;
   justify-content: center;
+}
+@media (min-width: 768px) {
+  .primary-nav ul li {
+    width: 100%;
+    padding: 0 16px;
+  }
 }
 .primary-nav ul li a {
   text-decoration: none;
   color: #E1E1E1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .primary-nav ul li a {
+    padding: 36px 0;
+  }
 }
 .primary-nav ul li .active, .primary-nav ul li li:hover {
   color: #FFFFFF;
-  font-weight: bold;
+  font-weight: 500;
   border-bottom: solid #FFFFFF 3px;
-  padding-bottom: 16px;
 }
 .primary-nav ul li:hover {
   font-weight: normal;
@@ -197,6 +230,9 @@ header {
     align-items: center;
   }
 }
+.footer div h2 {
+  padding: 16px 0;
+}
 .footer div .footer-logo {
   max-height: 20px;
   max-width: 120px;
@@ -211,29 +247,37 @@ header {
 .footer div article {
   display: flex;
   flex-direction: column;
+  padding: 8px 0;
 }
 .footer div article .footer-names {
-  font-weight: 600;
+  font-weight: 500;
 }
 .footer div article p {
   padding: 8px 0;
 }
 .footer div .social {
   flex-direction: row;
+  justify-content: space-between;
+  width: 40%;
 }
 .footer div .social img {
   padding-right: 16px;
 }
 @media (min-width: 768px) {
   .footer div .social {
-    align-self: inherit;
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 1280px) {
+  .footer div .social {
+    justify-content: flex-start;
   }
 }
 .footer-logo__mobile {
   display: flex;
   max-height: 20px;
   max-width: 120px;
-  padding: 8px 0;
+  padding: 42px 0 8px;
 }
 @media (min-width: 768px) {
   .footer-logo__mobile {
@@ -243,12 +287,25 @@ header {
 
 /*UPDATE TO START WITH MOBILE FIRST THEN DESKTOP*/
 .hero {
-  background: url(../assets/Images/hero-bio.jpg) center/cover no-repeat;
+  background-image: url(../assets/Images/hero-bio.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 25vh;
+  height: 50vw;
   color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 45vw;
+  }
+}
+@media (min-width: 1280px) {
+  .hero {
+    height: 45vw;
+  }
 }
 
 .about {
@@ -262,25 +319,45 @@ header {
   display: flex;
   flex-direction: column;
   width: 100%;
-  /*commented out since the same as tablet
-  @include dekstop {
-      width: 85%;
-      }*/
 }
 @media (min-width: 768px) {
   .about div {
     width: 85%;
   }
 }
+@media (min-width: 1280px) {
+  .about div {
+    width: 85%;
+  }
+}
+.about div figure {
+  background-image: url(../assets/Images/band.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vw;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .about div figure {
+    height: 40vw;
+  }
+}
+@media (min-width: 1280px) {
+  .about div figure {
+    height: 35vw;
+  }
+}
 .about div element {
   display: flex;
   flex-direction: column;
-  /*commented out since the same as tablet
-      @include dekstop {
-          flex-direction: row;
-          }*/
 }
 @media (min-width: 768px) {
+  .about div element {
+    flex-direction: row;
+  }
+}
+@media (min-width: 1280px) {
   .about div element {
     flex-direction: row;
   }
@@ -305,26 +382,26 @@ blockquote {
           margin-inline-start: 0;
   -webkit-margin-end: 0;
           margin-inline-end: 0;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 18px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
 }
 @media (min-width: 768px) {
   blockquote {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 32px;
     padding-top: 3rem;
   }
 }
 @media (min-width: 1280px) {
   blockquote {
-    width: 85%;
+    width: 80%;
   }
 }
 
 @media (min-width: 768px) {
   .blockquote-byline {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 22px;
     padding-top: 16px;
   }

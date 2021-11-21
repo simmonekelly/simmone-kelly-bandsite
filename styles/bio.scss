@@ -4,12 +4,23 @@
 /*UPDATE TO START WITH MOBILE FIRST THEN DESKTOP*/
 
 .hero {
-    background: url(../assets/Images/hero-bio.jpg) center/cover no-repeat;
+    background-image: url(../assets/Images/hero-bio.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    height: 25vh;
+    height: 50vw;
     color: $white;
+
+    @include tablet() {
+        height: 45vw;
+    }
+
+    @include desktop() {
+        height: 45vw;
+    }
 }
 
 .about {
@@ -29,13 +40,30 @@
             }
 
         //this is the same as tablet
-        @include dekstop {
+        @include desktop () {
             width: 85%;
             }
 
         h3 {
             @extend.section-header;
         }
+
+        figure {
+            background-image: url(../assets/Images/band.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 50vw;
+            margin: 0;
+
+            @include tablet() {
+                height: 40vw;
+            }
+            @include desktop() {
+                height: 35vw;
+            }
+        }
+
         element {
             display: flex;
             flex-direction: column;
@@ -45,7 +73,7 @@
             }
         
             //this is the same as tablet
-                @include dekstop {
+                @include desktop {
                     flex-direction: row;
                     }
         
@@ -68,25 +96,25 @@ blockquote {
     margin-block-end: 0;
     margin-inline-start: 0;
     margin-inline-end: 0;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 18px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
 
     @include tablet() {
-        font-size: 24px;
+        font-size: 22px;
         line-height: 32px;
         padding-top: 3rem;
     }
 
     @include desktop() {
-       width: 85%;
+       width: 80%;
     }
 }
 
 .blockquote-byline {
 
     @include tablet() {
-        font-size: 20px;
+        font-size: 16px;
         line-height: 22px;
         padding-top: 16px;
     }
