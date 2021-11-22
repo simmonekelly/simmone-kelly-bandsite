@@ -133,6 +133,21 @@ header {
               padding: 16px 0;
           }
 
+          element {
+
+            @include tablet (){
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 60%;
+            }
+
+            @include desktop() {
+              width: 50%;
+            }
+
+          }
+
         .footer-logo {
             max-height: 20px;
             max-width: 120px;
@@ -174,6 +189,12 @@ header {
             @include desktop {
                 justify-content: flex-start;
             }
+        }
+    }
+
+    .footer-contacts {
+        @include desktop {
+            width: 70%
         }
     }
 
