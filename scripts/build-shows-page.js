@@ -35,80 +35,77 @@ let show6 = {
 }
 let showList = [show1, show2, show3, show4, show5, show6]
 
+//creates table
+let getParent = document.querySelector('.shows');
+let createShowTable = document.createElement('table');
+createShowTable.classList.add('show_table')
+getParent.appendChild(createShowTable)
 
-let parent = document.querySelector('.shows');
-let showTable = document.createElement('table');
-showTable.classList.add('show_table')
-parent.appendChild(showTable)
 
 for (let i = 0; i < showList.length; i++) {
+//creates show row
+let createShowRow = document.createElement('tr');
+createShowRow.classList.add('show_row')
+console.log(createShowRow)
+createShowTable.appendChild(createShowRow)
 
-let showRow = document.createElement('tr');
-showRow.classList.add('show_row')
-showTable.appendChild(showRow)
+//creates date header
+let createDateHeader = document.createElement ('th')
+createDateHeader.classList.add('show_date_header')
+createDateHeader.innerText = 'Date';
+createShowRow.appendChild(createDateHeader)
+console.log(createDateHeader.innerText)
 
-let showDateHeader = document.createElement ('th')
-showDateHeader.classList.add('show_date_header')
-showRow.appendChild(showDateHeader)
+//adds date
+let addShowDate = document.createElement('td');
+addShowDate.classList.add('show_date');
+addShowDate.innerText = showList[i].date;
+createShowRow.appendChild(addShowDate)
+console.log(addShowDate.innerText)
 
-let addDateHeader = document.querySelectorAll('.show_date_header')
-//need to interate across all show date header classes
-addDateHeader.innerText = 'Date';
-console.log(addDateHeader.innerText)
+//creates venue header
+let createVenueHeader = document.createElement ('th')
+createVenueHeader.classList.add('show_venue_header')
+createVenueHeader.innerText = 'Venue';
+createShowRow.appendChild(createVenueHeader)
+console.log(createVenueHeader.innerText)
 
-let showDate = document.createElement('td');
-showDate.classList.add('show_date');
-showRow.appendChild(showDate)
+//add venue
+let addShowVenue = document.createElement ('td')
+addShowVenue.classList.add('show_venue')
+addShowVenue.innerText = showList[i].venue;
+createShowRow.appendChild(addShowVenue)
+console.log(addShowVenue.innerText)
 
-let addDate = document.querySelector('.show_date')
-addDate.innerText = showList[i].date;
-console.log(addDate.innerText)
+//create location headr
+let createLocationHeader = document.createElement ('th')
+createLocationHeader.classList.add('show_location_header')
+createLocationHeader.innerText = 'Location';
+createShowRow.appendChild(createLocationHeader)
 
-let showVenueHeader = document.createElement ('th')
-showVenueHeader.classList.add('show_venue_header')
-showRow.appendChild(showVenueHeader)
+//add locaition
+let addShowLocation = document.createElement ('td')
+addShowLocation.classList.add('show_location')
+addShowLocation.innerText = showList[i].location;
+createShowRow.appendChild(addShowLocation)
+console.log(addShowLocation.innerText)
 
-let addVenueHeader = document.querySelector('.show_venue_header')
-addVenueHeader.innerText = 'Venue';
-console.log(addVenueHeader.innerText)
+// create button blank header
 
-let showVenue = document.createElement ('td')
-showVenue.classList.add('show_venue')
-showRow.appendChild(showVenue)
+let createButtonHeader = document.createElement ('th')
+createButtonHeader.classList.add('show_button_header')
+createButtonHeader.innerText = '';
+createShowRow.appendChild(createButtonHeader)
 
-let addVenue = document.querySelector('.show_venue')
-addVenue.innerText = showList[i].venue;
-console.log(addVenue.innerText)
+//create button section
+let createShowButton = document.createElement ('td')
+createShowButton.classList.add('show_button_section')
+createShowRow.appendChild(createShowButton)
 
-let showLocationHeader = document.createElement ('th')
-showLocationHeader.classList.add('show_location_header')
-showRow.appendChild(showLocationHeader)
-
-let addLocationHeader = document.querySelector('.show_location_header')
-addLocationHeader.innerText = 'Location';
-console.log(addLocationHeader.innerText)
-
-let showLocation = document.createElement ('td')
-showLocation.classList.add('show_location')
-showRow.appendChild(showLocation)
-
-let addLocation = document.querySelector('.show_location')
-addLocation.innerText = showList[i].location;
-console.log(addLocation.innerText)
-
-let showButton = document.createElement ('td')
-showButton.classList.add('show_button')
-showRow.appendChild(showButton)
-
+// add button
 let addButton = document.createElement('button')
-showButton.appendChild(addButton)
-
-let addButtonText = document.querySelector('button')
-addButtonText.innerText = 'Buy Tickets';
-console.log(addButtonText.innerText)
-
+addButton.classList.add('show_button')
+addButton.innerText = 'Buy Tickets';
+createShowButton.appendChild(addButton)
+console.log(addButton.innerText)
 }
-
-//console.log(showList[i].date);
-    //console.log(showList[i].venue);
-   // console.log(showList[i].location);

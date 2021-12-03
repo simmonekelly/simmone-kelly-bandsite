@@ -26,7 +26,49 @@ iframe {
     padding: 16px 0;
 }
 
-tr {
+.show_table {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+}
+
+.show_row {
+    @extend .show_table;
+    width: 100%;
+}
+
+.show_button_section {
+    width: 100%;
+    padding: 8px 0;
+}
+
+.show_button {
+    width: 100%;
+    text-transform: uppercase;
+    height: 40px;
+    border-radius: 4px;
+    background-color: $bandsite-black;
+    color: $white;
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.show_date_header {
+    color: $silver;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 8px 0;
+}
+
+.show_date {
+    font-weight: 500;
+}
+
+.show_venue_header {
+    @extend .show_date_header ;
+}
+
+.show_location_header {
+    @extend .show_date_header ;
 }
