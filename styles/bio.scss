@@ -147,3 +147,76 @@ blockquote {
          }
     }
 }
+
+.comments_section-form {
+    display: flex;
+
+    img {
+        max-width: 36px;
+        max-height: 36px;
+        padding-top: 16px;
+        padding-right: 16px;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: Avenir Next;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+    color: $silver;
+
+    ::placeholder {
+        font-family: Avenir Next;
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: 400;
+        color: $bandsite-black;
+
+    }
+
+    button {
+        margin-bottom: 16px;
+        height: 40px;
+        padding: 0 32px;
+        background-color: $bandsite-black;
+        color: $white;
+        border-radius: 4px;
+        font-family: Avenir Next;
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: 600;
+    }
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        padding-bottom: 4px;
+    }
+
+    input {
+        margin-bottom: 16px;
+        min-height: 36px;
+        border-radius: 4px;
+        padding: 0 12px;
+        border: $mercury solid 1px;
+    }
+
+    textarea {
+        @extend input ;
+        padding-top: 12px;
+        height: 100px;
+    }
+        
+}
+
+hr {
+    color: $mercury;
+    stroke-width: 1px;
+}

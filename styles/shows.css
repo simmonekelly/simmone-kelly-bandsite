@@ -303,230 +303,34 @@ header {
   }
 }
 
-/*UPDATE TO START WITH MOBILE FIRST THEN DESKTOP*/
 .hero {
-  background-image: url(../assets/Images/hero-bio.jpg);
+  background-image: url(../assets/Images/hero-shows.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  height: 50vw;
-  color: #FFFFFF;
-}
-@media (min-width: 768px) {
-  .hero {
-    height: 45vw;
-  }
-}
-@media (min-width: 1280px) {
-  .hero {
-    height: 45vw;
-  }
-}
-
-.about {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: #FFFFFF;
-  color: #323232;
-}
-.about div {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .about div {
-    width: 85%;
-  }
-}
-@media (min-width: 1280px) {
-  .about div {
-    width: 85%;
-  }
-}
-.about div figure {
-  background-image: url(../assets/Images/band.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 50vw;
-  margin: 0;
-}
-@media (min-width: 768px) {
-  .about div figure {
-    height: 40vw;
-  }
-}
-@media (min-width: 1280px) {
-  .about div figure {
-    height: 35vw;
-  }
-}
-.about div element {
-  display: flex;
-  flex-direction: column;
-}
-@media (min-width: 768px) {
-  .about div element {
-    flex-direction: row;
-  }
-}
-@media (min-width: 1280px) {
-  .about div element {
-    flex-direction: row;
-  }
-}
-.about div element p {
-  display: flex;
-  padding-bottom: 16px;
-}
-
-.section-header, .about div h3 {
-  align-self: flex-start;
-}
-
-blockquote {
-  display: flex;
-  padding-top: 16px;
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
-  -webkit-margin-start: 0;
-          margin-inline-start: 0;
-  -webkit-margin-end: 0;
-          margin-inline-end: 0;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 22px;
-}
-@media (min-width: 768px) {
-  blockquote {
-    font-size: 22px;
-    line-height: 32px;
-    padding-top: 3rem;
-  }
-}
-@media (min-width: 1280px) {
-  blockquote {
-    width: 80%;
-  }
-}
-
-@media (min-width: 768px) {
-  .blockquote-byline {
-    font-size: 16px;
-    line-height: 22px;
-    padding-top: 16px;
-  }
-}
-
-.photo-gallery {
-  background-color: #FAFAFA;
-}
-.photo-gallery div {
-  display: flex;
-  flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: center;
+  height: 55vh;
+  color: #FFFFFF;
 }
 @media (min-width: 768px) {
-  .photo-gallery div {
-    justify-content: space-between;
-  }
-}
-.photo-gallery div img {
-  width: 100%;
-  padding-bottom: 16px;
-}
-@media (min-width: 768px) {
-  .photo-gallery div img {
-    width: 31%;
+  .hero {
+    height: 45vw;
   }
 }
 @media (min-width: 1280px) {
-  .photo-gallery div img {
-    padding-bottom: 2rem;
+  .hero {
+    height: 45vw;
   }
 }
 
-.comments_section-form {
-  display: flex;
-}
-.comments_section-form img {
-  max-width: 36px;
-  max-height: 36px;
-  padding-top: 16px;
-  padding-right: 16px;
+iframe {
+  padding: 16px 0;
 }
 
-form {
+tr {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  font-family: Avenir Next;
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 600;
-  color: #AFAFAF;
-}
-form ::-moz-placeholder {
-  font-family: Avenir Next;
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
-  color: #323232;
-}
-form :-ms-input-placeholder {
-  font-family: Avenir Next;
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
-  color: #323232;
-}
-form ::placeholder {
-  font-family: Avenir Next;
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
-  color: #323232;
-}
-form button {
-  margin-bottom: 16px;
-  height: 40px;
-  padding: 0 32px;
-  background-color: #323232;
-  color: #FFFFFF;
-  border-radius: 4px;
-  font-family: Avenir Next;
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 600;
-}
-
-.form-field {
-  display: flex;
-  flex-direction: column;
-}
-.form-field label {
-  padding-bottom: 4px;
-}
-.form-field input, .form-field textarea {
-  margin-bottom: 16px;
-  min-height: 36px;
-  border-radius: 4px;
-  padding: 0 12px;
-  border: #E1E1E1 solid 1px;
-}
-.form-field textarea {
-  padding-top: 12px;
-  height: 100px;
-}
-
-hr {
-  color: #E1E1E1;
-  stroke-width: 1px;
-}/*# sourceMappingURL=bio.css.map */
+}/*# sourceMappingURL=shows.css.map */
