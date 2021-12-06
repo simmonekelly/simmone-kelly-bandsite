@@ -1,8 +1,6 @@
 @use '../styles/partials/global' as *;
 @use '../styles/partials/colors-fonts' as *;
 
-/*UPDATE TO START WITH MOBILE FIRST THEN DESKTOP*/
-
 .hero {
     background-image: url(../assets/Images/hero-bio.jpg) ;
     background-position: center;
@@ -136,6 +134,7 @@ blockquote {
         img {
             width: 100%;
             padding-bottom: 16px;
+            filter: grayscale(100%);
 
             @include tablet() {
                 width: 31%;
@@ -144,18 +143,38 @@ blockquote {
             @include desktop() {
                 padding-bottom: 2rem;
             }
+        }
+
+        img:hover {
+            filter: grayscale(0%);
          }
+    }
+}
+
+.comments {
+    padding-bottom: 16px;
+
+    @include desktop() {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
 .comments_section-form {
     display: flex;
+    justify-content: center;
 
     img {
         max-width: 36px;
         max-height: 36px;
-        padding-top: 16px;
-        padding-right: 16px;
+        padding: 16px;
+        vertical-align: middle;
+        border-radius: 50%;
+    }
+
+    @include desktop() {
+        width: 600px;
     }
 }
 
@@ -168,6 +187,10 @@ form {
     line-height: 18px;
     font-weight: 600;
     color: $silver;
+
+    @include tablet() {
+        width: 75%;
+    }
 
     ::placeholder {
         font-family: Avenir Next;
@@ -189,6 +212,12 @@ form {
         font-size: 13px;
         line-height: 18px;
         font-weight: 600;
+
+        @include tablet() {
+            width: 150px;
+            padding: 0 32px;
+            align-self: flex-end;
+        }
     }
 }
 
@@ -219,31 +248,77 @@ form {
 hr {
     color: $mercury;
     stroke-width: 1px;
+
+    @include desktop() {
+        width: 600px;
+    }
 }
 
-.comment_container {
+.posted-comments {
     display: flex;
     flex-direction: column;
-}
 
-.comment_header_section {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 8px;
-}
+    @include desktop() {
+        width: 600px;
+    }
 
-.comment_header_name {
-    font-weight: 600;
-}
+    &_container {
+        display: flex;
+        justify-content: space-between;
 
-.comment_header_date {
-    color: $silver;
-}
+        @include tablet () {
+            justify-content: center;
+        }
+    }
 
-.comment_text {
-    padding-bottom: 8px;
+    &_avatar {
+        width: 36px;
+        height: 36px;
+        padding: 8px;
+        margin: 0;
+        vertical-align: middle;
+        border-radius: 50%;
+        background-color: $mercury;
+
+        @include tablet () {
+           margin-right: 20px;
+        }
+    }
+
+    &_section {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet () {
+            width: 75%;
+        }
+    }
+
+    &_header-seciton {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 8px;
+    }
+
+    &_header-name {
+        font-weight: 600;
+    }
+
+    &_header-date {
+        color: $silver;
+    }
+
+    &_comment {
+        padding-bottom: 8px;
+    }
 }
 
 .comment_seperator {
-    @extend hr
+    @extend hr ;
+    width: 100%;
+
+    @include tablet () {
+        width: 85%;
+    }
 }

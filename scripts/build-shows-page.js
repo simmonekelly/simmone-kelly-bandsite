@@ -1,45 +1,50 @@
-let show1 = {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane", 
-    location: "San Francisco, CA"
-}
-
-let show2 = {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA"
-}
-
-let show3 = {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA"
-}
-
-let show4 = {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA"
-}
-
-let show5 = {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA"
-}
-
-let show6 = {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA"
-}
-let showList = [show1, show2, show3, show4, show5, show6]
+let showList = [
+{date: "Mon Sept 06 2021", venue: "Ronald Lane", location: "San Francisco, CA"},
+{date: "Tue Sept 21 2021", venue: "Pier 3 East", location: "San Francisco, CA"},
+{date: "Fri Oct 15 2021", venue: "View Lounge", location: "San Francisco, CA"}, 
+{date: "Sat Nov 06 2021", venue: "Hyatt Agency", location: "San Francisco, CA"}, 
+{date: "Fri Nov 26 2021", venue: "Moscow Center",location: "San Francisco, CA"}, 
+{date: "Wed Dec 15 2021", venue: "Press Club", location: "San Francisco, CA"}
+]
 
 //creates table
 let getParent = document.querySelector('.shows');
 let createShowTable = document.createElement('table');
 createShowTable.classList.add('show_table')
 getParent.appendChild(createShowTable)
+
+//creates desktop/table show row
+let createShowRow = document.createElement('tr');
+createShowRow.classList.add('desktop_show_row')
+console.log(createShowRow)
+createShowTable.appendChild(createShowRow)
+
+//creates desktop/table date header
+let createDateHeader = document.createElement ('th')
+createDateHeader.classList.add('desktop_show_date_header')
+createDateHeader.innerText = 'Date';
+createShowRow.appendChild(createDateHeader)
+console.log(createDateHeader.innerText)
+
+//creates desktop/table venue header
+let createVenueHeader = document.createElement ('th')
+createVenueHeader.classList.add('desktop_show_venue_header')
+createVenueHeader.innerText = 'Venue';
+createShowRow.appendChild(createVenueHeader)
+console.log(createVenueHeader.innerText)
+
+//create desktop/table location headr
+let createLocationHeader = document.createElement ('th')
+createLocationHeader.classList.add('desktop_show_location_header')
+createLocationHeader.innerText = 'Location';
+createShowRow.appendChild(createLocationHeader)
+
+// create desktop/tablet button blank header
+
+let createButtonHeader = document.createElement ('th')
+createButtonHeader.classList.add('desktop_show_button_header')
+createButtonHeader.innerText = '';
+createShowRow.appendChild(createButtonHeader)
 
 
 for (let i = 0; i < showList.length; i++) {
@@ -108,4 +113,17 @@ addButton.classList.add('show_button')
 addButton.innerText = 'Buy Tickets';
 createShowButton.appendChild(addButton)
 console.log(addButton.innerText)
+
+//add line
+let createLine = document.createElement('hr')
+createLine.classList.add('show_line_break')
+createShowRow.appendChild(createLine)
 }
+
+// adding active class on click i couldnt figure this out :/
+// createShowTable.addEventListener('click', fucntion(event) { //add event listener to click
+//     const showClick = event.target, //even target
+// })
+// let selectShowRow = document.querySelector('.show_row'); //selecting the show row
+// selectShowRow.classList.add('active') //adding active class to show row
+

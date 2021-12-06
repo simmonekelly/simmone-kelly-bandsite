@@ -202,15 +202,14 @@ header {
     padding: 36px 0;
   }
 }
-.primary-nav ul li .active, .primary-nav ul li li:hover {
+.primary-nav ul li .active, .primary-nav ul li a:hover {
   color: #FFFFFF;
   font-weight: 500;
   border-bottom: solid #FFFFFF 3px;
 }
-.primary-nav ul li:hover {
-  font-weight: normal;
-  transition-property: border-bottom-color, border-bottom-width;
-  transition-duration: 1s, 1s;
+.primary-nav ul a:hover {
+  font-weight: 400;
+  border-bottom: solid #FFFFFF 3px;
 }
 
 .footer {
@@ -303,7 +302,6 @@ header {
   }
 }
 
-/*UPDATE TO START WITH MOBILE FIRST THEN DESKTOP*/
 .hero {
   background-image: url(../assets/Images/hero-bio.jpg);
   background-position: center;
@@ -441,6 +439,7 @@ blockquote {
 .photo-gallery div img {
   width: 100%;
   padding-bottom: 16px;
+  filter: grayscale(100%);
 }
 @media (min-width: 768px) {
   .photo-gallery div img {
@@ -452,15 +451,36 @@ blockquote {
     padding-bottom: 2rem;
   }
 }
+.photo-gallery div img:hover {
+  filter: grayscale(0%);
+}
+
+.comments {
+  padding-bottom: 16px;
+}
+@media (min-width: 1280px) {
+  .comments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 .comments_section-form {
   display: flex;
+  justify-content: center;
 }
 .comments_section-form img {
   max-width: 36px;
   max-height: 36px;
-  padding-top: 16px;
-  padding-right: 16px;
+  padding: 16px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+@media (min-width: 1280px) {
+  .comments_section-form {
+    width: 600px;
+  }
 }
 
 form {
@@ -472,6 +492,11 @@ form {
   line-height: 18px;
   font-weight: 600;
   color: #AFAFAF;
+}
+@media (min-width: 768px) {
+  form {
+    width: 75%;
+  }
 }
 form ::-moz-placeholder {
   font-family: Avenir Next;
@@ -506,6 +531,13 @@ form button {
   line-height: 18px;
   font-weight: 600;
 }
+@media (min-width: 768px) {
+  form button {
+    width: 150px;
+    padding: 0 32px;
+    align-self: flex-end;
+  }
+}
 
 .form-field {
   display: flex;
@@ -530,26 +562,74 @@ hr, .comment_seperator {
   color: #E1E1E1;
   stroke-width: 1px;
 }
+@media (min-width: 1280px) {
+  hr, .comment_seperator {
+    width: 600px;
+  }
+}
 
-.comment_container {
+.posted-comments {
   display: flex;
   flex-direction: column;
 }
-
-.comment_header_section {
+@media (min-width: 1280px) {
+  .posted-comments {
+    width: 600px;
+  }
+}
+.posted-comments_container {
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .posted-comments_container {
+    justify-content: center;
+  }
+}
+.posted-comments_avatar {
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  margin: 0;
+  vertical-align: middle;
+  border-radius: 50%;
+  background-color: #E1E1E1;
+}
+@media (min-width: 768px) {
+  .posted-comments_avatar {
+    margin-right: 20px;
+  }
+}
+.posted-comments_section {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .posted-comments_section {
+    width: 75%;
+  }
+}
+.posted-comments_header-seciton {
   display: flex;
   justify-content: space-between;
   padding-bottom: 8px;
 }
-
-.comment_header_name {
+.posted-comments_header-name {
   font-weight: 600;
 }
-
-.comment_header_date {
+.posted-comments_header-date {
   color: #AFAFAF;
 }
-
-.comment_text {
+.posted-comments_comment {
   padding-bottom: 8px;
+}
+
+.comment_seperator {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .comment_seperator {
+    width: 85%;
+  }
 }/*# sourceMappingURL=bio.css.map */

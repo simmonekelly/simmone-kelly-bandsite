@@ -103,11 +103,12 @@ header {
             }
         }
 
-        li:hover {
+        a:hover {
             @extend .active;
-            font-weight: normal;
-            transition-property: border-bottom-color, border-bottom-width;
-            transition-duration: 1s, 1s;
+            font-weight: 400;
+            border-bottom: solid $white 3px;
+            // transition-property: border-bottom-color, border-bottom-width;
+            // transition-duration: 1s, 1s;
         }
     }
 }
