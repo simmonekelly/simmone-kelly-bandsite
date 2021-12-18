@@ -15,6 +15,7 @@ body {
         padding: 0 36px;  
     }
 
+    //need to update this calculation
    @include desktop() {
         padding: 0 calc(100vw - (1280px - 150px));  
     }
