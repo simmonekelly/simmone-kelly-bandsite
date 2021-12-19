@@ -37,7 +37,7 @@ createShowRow.appendChild(createButtonHeader)
 
 //format date
 function formatDate(dateString) {
-    let date = new Date(dateString)
+    let date = new Date(JSON.parse(dateString));
     return (date.getUTCMonth() + 1) + '/' + date.getUTCDate() + '/' + date.getUTCFullYear();
 }
 
@@ -129,8 +129,7 @@ function highlightShowRow() {
 //axios
 const p = axios.get('https://project-1-api.herokuapp.com/showdates?api_key=api');
 p.then(results => {
-    console.log(results.data)
-
+    
     //run show list function
     createShowList(results.data)
 

@@ -78,7 +78,6 @@ function displayComment() {
     //axios get request
     const p = axios.get('https://project-1-api.herokuapp.com/comments?api_key=' + api);
     p.then(results => {
-        console.log(results.data)
         let comments = results.data
         
         //sort comments
