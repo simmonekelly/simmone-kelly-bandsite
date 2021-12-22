@@ -62,7 +62,7 @@
             }
         }
 
-        element {
+        .bio {
             display: flex;
             flex-direction: column;
                 
@@ -78,6 +78,10 @@
              p {
                 display: flex;
                 padding-bottom: 16px; 
+            }
+
+            .bio-left {
+                padding-right: 16px;
             }
         }
     }  
@@ -165,12 +169,13 @@ blockquote {
     display: flex;
     justify-content: center;
 
-    img {
+    .comments_section-avatar {
         max-width: 36px;
         max-height: 36px;
-        padding: 16px;
+        padding: 8px;
         vertical-align: middle;
         border-radius: 50%;
+        margin: 0 20px 0 0;
     }
 
     @include desktop() {
@@ -311,6 +316,18 @@ hr {
 
     &_comment {
         padding-bottom: 8px;
+    }
+
+    &_like-button {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        color: $mercury;
+    }
+
+    &_likes-section {
+        display: flex;
+        align-items: center
     }
 }
 

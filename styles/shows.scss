@@ -14,7 +14,7 @@
     color: $white;
 
     @include tablet() {
-        height: 45vh;
+        height: 70vh;
     }
 
     @include desktop() {

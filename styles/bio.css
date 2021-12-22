@@ -115,7 +115,7 @@ body {
 }
 @media (min-width: 1280px) {
   .site-padding {
-    padding: 0 calc(100vw - (1280px - 150px));
+    padding: 0 150px;
   }
 }
 
@@ -133,7 +133,7 @@ header {
 }
 @media (min-width: 1280px) {
   header {
-    padding: 16px calc(100vw - (1280px - 150px)) 0;
+    padding: 16px 150px 0;
   }
 }
 
@@ -364,23 +364,26 @@ header {
     height: 35vw;
   }
 }
-.about div element {
+.about div .bio {
   display: flex;
   flex-direction: column;
 }
 @media (min-width: 768px) {
-  .about div element {
+  .about div .bio {
     flex-direction: row;
   }
 }
 @media (min-width: 1280px) {
-  .about div element {
+  .about div .bio {
     flex-direction: row;
   }
 }
-.about div element p {
+.about div .bio p {
   display: flex;
   padding-bottom: 16px;
+}
+.about div .bio .bio-left {
+  padding-right: 16px;
 }
 
 .section-header, .about div h3 {
@@ -470,12 +473,13 @@ blockquote {
   display: flex;
   justify-content: center;
 }
-.comments_section-form img {
+.comments_section-form .comments_section-avatar {
   max-width: 36px;
   max-height: 36px;
-  padding: 16px;
+  padding: 8px;
   vertical-align: middle;
   border-radius: 50%;
+  margin: 0 20px 0 0;
 }
 @media (min-width: 1280px) {
   .comments_section-form {
@@ -623,6 +627,16 @@ hr, .comment_seperator {
 }
 .posted-comments_comment {
   padding-bottom: 8px;
+}
+.posted-comments_like-button {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  color: #E1E1E1;
+}
+.posted-comments_likes-section {
+  display: flex;
+  align-items: center;
 }
 
 .comment_seperator {

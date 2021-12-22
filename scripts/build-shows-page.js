@@ -126,10 +126,10 @@ function highlightShowRow() {
 }
 
 
-//axios
+//axios to get show list
 const p = axios.get('https://project-1-api.herokuapp.com/showdates?api_key=api');
 p.then(results => {
-    
+
     //run show list function
     createShowList(results.data)
 
@@ -140,7 +140,3 @@ p.then(results => {
 .catch( error => {
     console.log(error)
 })
-
-
-
-

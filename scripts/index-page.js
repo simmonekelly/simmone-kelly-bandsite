@@ -2,19 +2,6 @@ let api = '6ceb11dc-2ff7-4333-a7b2-e59085b2da97'
 
 let getCommentContainer = document.querySelector('.posted-comments')
 
-// //format date
-// function formatDate(date) {
-//     return (date.getUTCMonth() + 1) + '/' + date.getUTCDate() + '/' + date.getUTCFullYear();
-// }
-
-// // creates comment section
-// function displayComment() {
-
-//     //sort comments
-//     const sortedComments = commentList.sort((a,b) => {
-//         return b.date - a.date;
-//     })
-
 //loads comment section on pageload
 window.addEventListener('load',displayComment)
 
@@ -47,13 +34,13 @@ function loadComments(commentList) {
         createHeaderSection.classList.add('posted-comments_header-seciton')
         createCommentDiv.appendChild(createHeaderSection)
 
-        //creates name header
+        //creates name
         let createNameHeader = document.createElement('p')
         createNameHeader.classList.add('posted-comments_header-name')
         createNameHeader.innerText = comment.name;
         createHeaderSection.appendChild(createNameHeader)
 
-        //creates date section
+        //creates date
         let createDate = document.createElement('p')
         createDate.classList.add('posted-comments_header-date')
         createDate.innerText = formatDate(comment.timestamp);
@@ -64,6 +51,25 @@ function loadComments(commentList) {
         createComment.classList.add('posted-comments_comment')
         createComment.innerText = comment.comment;
         createCommentDiv.appendChild(createComment)
+
+        //creates likes div
+        let createCommentLikeSection = document.createElement('div')
+        createCommentLikeSection.classList.add('posted-comments_likes-section')
+        createCommentDiv.appendChild(createCommentLikeSection)
+
+        //adds like button
+        let createLikeButton = document.createElement('img')
+        createLikeButton.classList.add('posted-comments_like-button')
+        createLikeButton.setAttribute('id',comment.id)
+        createLikeButton.setAttribute('src', '../assets/Icons/SVG/icon-like.svg')
+        createCommentLikeSection.appendChild(createLikeButton)
+
+        //add like count
+        let likeCount = document.createElement('p')
+        likeCount.classList.add('posted-comments_likes')
+        likeCount.classList.add('id'+ comment.id)
+        likeCount.innerText = comment.likes;
+        createCommentLikeSection.appendChild(likeCount)
 
         //creates line
         let createLine = document.createElement('hr')
@@ -86,6 +92,8 @@ function displayComment() {
         })
 
         loadComments(sortedComments);
+        addLike();
+        
     })
     .catch(error => {
     console.log(error)
@@ -136,5 +144,36 @@ function clearComments() {
 
     lineToRemove.forEach(line => {
         getCommentSection.removeChild(line)
+    })
+}
+
+// event listener for like button
+function addLike() {
+    const likeButton = document.querySelectorAll('.posted-comments_like-button')
+        console.log(likeButton)
+    likeButton.forEach(like => {
+        like.addEventListener('click', event => {
+            console.log('button clicked')
+            console.log(like.id)
+            updateCounter(like.id)
+    })
+    })
+    
+}
+
+//function to update counter
+function updateCounter(id) {
+    const p = axios.put('https://project-1-api.herokuapp.com/comments/' + id + '/like?api_key=' + api);
+    p.then(results => {
+        console.log(results)
+        const commentId = results.data.id
+
+        //grabbing like counter
+        const likedComment = document.querySelector('.id' + commentId)
+        console.log(likedComment)
+        likedComment.innerText = results.data.likes;
+    })
+    .catch(error => {
+        console.log(error)
     })
 }

@@ -17,7 +17,7 @@ body {
 
     //need to update this calculation
    @include desktop() {
-        padding: 0 calc(100vw - (1280px - 150px));  
+        padding: 0 150px;  
     }
 }
 
@@ -33,7 +33,7 @@ header {
     }
 
     @include desktop() {
-       padding: 16px calc(100vw - (1280px - 150px)) 0;
+       padding: 16px 150px 0;
     }
 }
 
