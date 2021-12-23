@@ -71,6 +71,13 @@ function loadComments(commentList) {
         likeCount.innerText = comment.likes;
         createCommentLikeSection.appendChild(likeCount)
 
+        //adds delete button
+        let createDeleteButton = document.createElement('img')
+        createDeleteButton.classList.add('posted-comments_delete-button')
+        createDeleteButton.setAttribute('id','del' + comment.id)
+        createDeleteButton.setAttribute('src', '../assets/Icons/SVG/icon-delete.svg')
+        createCommentLikeSection.appendChild(createDeleteButton)
+
         //creates line
         let createLine = document.createElement('hr')
         createLine.classList.add('comment_seperator')
@@ -93,6 +100,7 @@ function displayComment() {
 
         loadComments(sortedComments);
         addLike();
+        deleteComment();
         
     })
     .catch(error => {
@@ -172,6 +180,36 @@ function updateCounter(id) {
         const likedComment = document.querySelector('.id' + commentId)
         console.log(likedComment)
         likedComment.innerText = results.data.likes;
+    })
+    .catch(error => {
+        console.log(error)
+    })
+}
+
+//function to delete comment
+function deleteComment() {
+    const deleteButton = document.querySelectorAll('.posted-comments_delete-button')
+    console.log(deleteButton)
+    deleteButton.forEach(item => {
+        item.addEventListener('click', event => {
+            console.log('delete button clicked')
+            let pullButtonId = item.id
+            let buttonId = pullButtonId.substr(3)
+            console.log(buttonId)
+            runDeleteCall(buttonId)
+        })
+    })
+}
+
+//function to run API call
+function runDeleteCall(id) {
+    const p = axios.delete('https://project-1-api.herokuapp.com/comments/' + id + '?api_key=' + api);
+    p.then(results => {
+        console.log(results)
+        const commentId = results.data.id
+
+        clearComments()
+        displayComment()
     })
     .catch(error => {
         console.log(error)

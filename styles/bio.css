@@ -638,6 +638,9 @@ hr, .comment_seperator {
   display: flex;
   align-items: center;
 }
+.posted-comments_delete-button {
+  margin-left: auto;
+}
 
 .comment_seperator {
   width: 100%;
