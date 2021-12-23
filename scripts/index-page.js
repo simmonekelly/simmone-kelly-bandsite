@@ -60,7 +60,7 @@ function loadComments(commentList) {
         //adds like button
         let createLikeButton = document.createElement('img')
         createLikeButton.classList.add('posted-comments_like-button')
-        createLikeButton.setAttribute('id',comment.id)
+        createLikeButton.setAttribute('id','like' + comment.id)
         createLikeButton.setAttribute('src', '../assets/Icons/SVG/icon-like.svg')
         createCommentLikeSection.appendChild(createLikeButton)
 
@@ -113,7 +113,6 @@ function displayComment() {
 const commentForm = document.getElementById('comments-form')
 commentForm.addEventListener('submit', event => {
     event.preventDefault();
-    console.log('Comment Submitted')
     const formTarget = event.target
     const passedName = formTarget.user_name.value
     const passedComment = formTarget.comment.value
@@ -132,7 +131,6 @@ function postComment(passedName, passedComment) {
         comment: passedComment
     });
     newComment.then(results => {
-        console.log(results.data)
         displayComment();
     })
     .catch(error => {
@@ -158,12 +156,11 @@ function clearComments() {
 // event listener for like button
 function addLike() {
     const likeButton = document.querySelectorAll('.posted-comments_like-button')
-        console.log(likeButton)
     likeButton.forEach(like => {
         like.addEventListener('click', event => {
-            console.log('button clicked')
-            console.log(like.id)
-            updateCounter(like.id)
+            let pullButtonId = like.id
+            let buttonId = pullButtonId.substr(4)
+            updateCounter(buttonId)
     })
     })
     
@@ -173,12 +170,10 @@ function addLike() {
 function updateCounter(id) {
     const p = axios.put('https://project-1-api.herokuapp.com/comments/' + id + '/like?api_key=' + api);
     p.then(results => {
-        console.log(results)
         const commentId = results.data.id
 
         //grabbing like counter
         const likedComment = document.querySelector('.id' + commentId)
-        console.log(likedComment)
         likedComment.innerText = results.data.likes;
     })
     .catch(error => {
@@ -189,13 +184,10 @@ function updateCounter(id) {
 //function to delete comment
 function deleteComment() {
     const deleteButton = document.querySelectorAll('.posted-comments_delete-button')
-    console.log(deleteButton)
     deleteButton.forEach(item => {
         item.addEventListener('click', event => {
-            console.log('delete button clicked')
             let pullButtonId = item.id
             let buttonId = pullButtonId.substr(3)
-            console.log(buttonId)
             runDeleteCall(buttonId)
         })
     })
@@ -205,7 +197,6 @@ function deleteComment() {
 function runDeleteCall(id) {
     const p = axios.delete('https://project-1-api.herokuapp.com/comments/' + id + '?api_key=' + api);
     p.then(results => {
-        console.log(results)
         const commentId = results.data.id
 
         clearComments()
