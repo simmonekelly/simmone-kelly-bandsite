@@ -15,8 +15,9 @@ body {
         padding: 0 36px;  
     }
 
+    //need to update this calculation
    @include desktop() {
-        padding: 0 calc(100vw - (1280px - 150px));  
+        padding: 0 150px;  
     }
 }
 
@@ -32,7 +33,7 @@ header {
     }
 
     @include desktop() {
-       padding: 16px calc(100vw - (1280px - 150px)) 0;
+       padding: 16px 150px 0;
     }
 }
 
@@ -103,11 +104,12 @@ header {
             }
         }
 
-        li:hover {
+        a:hover {
             @extend .active;
-            font-weight: normal;
-            transition-property: border-bottom-color, border-bottom-width;
-            transition-duration: 1s, 1s;
+            font-weight: 400;
+            border-bottom: solid $white 3px;
+            // transition-property: border-bottom-color, border-bottom-width;
+            // transition-duration: 1s, 1s;
         }
     }
 }

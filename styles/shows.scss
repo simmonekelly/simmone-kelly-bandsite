@@ -1,0 +1,196 @@
+@use '../styles/partials/global' as *;
+@use '../styles/partials/colors-fonts' as *;
+
+.hero {
+    background-image: url(../assets/Images/hero-shows.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 55vh;
+    color: $white;
+
+    @include tablet() {
+        height: 70vh;
+    }
+
+    @include desktop() {
+        height: 45vw;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    div {
+        @include desktop() {
+            width: 50%;
+        }
+    }
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.shows {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet() {
+        flex-direction: column;
+    }
+
+    @include desktop() {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+iframe {
+    padding: 16px 0;
+
+    @include desktop() {
+        width: 50%;
+    }
+}
+
+.show_table {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 24px;
+    width: 100%;
+
+    @include desktop() {
+        width: 75%;
+    }
+
+    .active {
+        background-color: $mercury;
+    }
+}
+
+.show_row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    border-bottom: $mercury solid 1px;
+
+    &:hover {
+        background-color: $alabaster;
+    }
+
+    @include tablet() {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 0;
+    }
+}
+
+.desktop_show_row {
+    display: none;
+
+    @include tablet() {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 24px 0 0;
+        width: 100%;
+    }
+}
+
+.show_button_section {
+    width: 100%;
+    padding: 8px 0;
+
+    @include tablet () {
+        width: 25%;
+    }
+}
+
+.show_button {
+    width: 100%;
+    text-transform: uppercase;
+    height: 40px;
+    border-radius: 4px;
+    background-color: $bandsite-black;
+    color: $white;
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: 600;
+
+    @include tablet() {
+        min-width: 150px;
+        font-size: 12px;
+    }
+}
+
+.show_date {
+    font-weight: 500;
+    
+    @include tablet() {
+        width: 25%;
+    }
+}
+
+.show_venue {
+    @extend .show_date ;
+    font-weight:400;
+
+}
+
+.show_location {
+    @extend .show_date ;
+    font-weight:400;
+}
+
+.show_date_header {
+    color: $silver;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 8px 0;
+
+    @include tablet () {
+        display: none;
+    }
+}
+
+.show_venue_header {
+    @extend .show_date_header ;
+
+}
+
+.show_location_header {
+    @extend .show_date_header ;
+}
+
+.desktop_show_date_header{
+    width: 100%;
+
+    @include tablet () {
+        width: 25%;
+        color: $silver;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 8px 0;
+        text-align: left;
+    }
+}
+
+.desktop_show_venue_header {
+    @extend .desktop_show_date_header ;
+}
+
+.desktop_show_location_header {
+    @extend .desktop_show_date_header ;
+}
+
+.desktop_show_button_header {
+    @extend .desktop_show_date_header ;
+}

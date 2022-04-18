@@ -1,8 +1,6 @@
 @use '../styles/partials/global' as *;
 @use '../styles/partials/colors-fonts' as *;
 
-/*UPDATE TO START WITH MOBILE FIRST THEN DESKTOP*/
-
 .hero {
     background-image: url(../assets/Images/hero-bio.jpg) ;
     background-position: center;
@@ -64,7 +62,7 @@
             }
         }
 
-        element {
+        .bio {
             display: flex;
             flex-direction: column;
                 
@@ -80,6 +78,10 @@
              p {
                 display: flex;
                 padding-bottom: 16px; 
+            }
+
+            .bio-left {
+                padding-right: 16px;
             }
         }
     }  
@@ -136,6 +138,7 @@ blockquote {
         img {
             width: 100%;
             padding-bottom: 16px;
+            filter: grayscale(100%);
 
             @include tablet() {
                 width: 31%;
@@ -144,6 +147,199 @@ blockquote {
             @include desktop() {
                 padding-bottom: 2rem;
             }
+        }
+
+        img:hover {
+            filter: grayscale(0%);
          }
+    }
+}
+
+.comments {
+    padding-bottom: 16px;
+
+    @include desktop() {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.comments_section-form {
+    display: flex;
+    justify-content: center;
+
+    .comments_section-avatar {
+        max-width: 36px;
+        max-height: 36px;
+        padding: 8px;
+        vertical-align: middle;
+        border-radius: 50%;
+        margin: 0 20px 0 0;
+    }
+
+    @include desktop() {
+        width: 600px;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: Avenir Next;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+    color: $silver;
+
+    @include tablet() {
+        width: 75%;
+    }
+
+    ::placeholder {
+        font-family: Avenir Next;
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: 400;
+        color: $bandsite-black;
+
+    }
+
+    button {
+        margin-bottom: 16px;
+        height: 40px;
+        padding: 0 32px;
+        background-color: $bandsite-black;
+        color: $white;
+        border-radius: 4px;
+        font-family: Avenir Next;
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: 600;
+
+        @include tablet() {
+            width: 150px;
+            padding: 0 32px;
+            align-self: flex-end;
+        }
+    }
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        padding-bottom: 4px;
+    }
+
+    input {
+        margin-bottom: 16px;
+        min-height: 36px;
+        border-radius: 4px;
+        padding: 0 12px;
+        border: $mercury solid 1px;
+    }
+
+    textarea {
+        @extend input ;
+        padding-top: 12px;
+        height: 100px;
+    }
+        
+}
+
+hr {
+    color: $mercury;
+    stroke-width: 1px;
+
+    @include desktop() {
+        width: 600px;
+    }
+}
+
+.posted-comments {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop() {
+        width: 600px;
+    }
+
+    &_container {
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet () {
+            justify-content: center;
+        }
+    }
+
+    &_avatar {
+        width: 36px;
+        height: 36px;
+        padding: 8px;
+        margin: 0;
+        vertical-align: middle;
+        border-radius: 50%;
+        background-color: $mercury;
+
+        @include tablet () {
+           margin-right: 20px;
+        }
+    }
+
+    &_section {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet () {
+            width: 75%;
+        }
+    }
+
+    &_header-seciton {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 8px;
+    }
+
+    &_header-name {
+        font-weight: 600;
+    }
+
+    &_header-date {
+        color: $silver;
+    }
+
+    &_comment {
+        padding-bottom: 8px;
+    }
+
+    &_like-button {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        color: $mercury;
+    }
+
+    &_likes-section {
+        display: flex;
+        align-items: center
+    }
+
+    &_delete-button {
+        margin-left: auto;
+    }
+}
+
+.comment_seperator {
+    @extend hr ;
+    width: 100%;
+
+    @include tablet () {
+        width: 85%;
     }
 }
